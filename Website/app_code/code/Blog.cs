@@ -28,7 +28,6 @@ public static class Blog
 	public static int PostsPerPage { get; private set; }
 	public static int DaysToComment { get; private set; }
 	public static bool ModerateComments { get; private set; }
-	public static bool Blarch { get; private set; }
 	
 	public static string CurrentSlug
 	{
