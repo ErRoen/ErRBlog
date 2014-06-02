@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<post>
+  <title>Hello World</title>
+  <slug>hello-world</slug>
+  <author>demo</author>
+  <pubDate>2014-06-02 02:28:31</pubDate>
+  <lastModified>2014-06-02 02:29:43</lastModified>
+  <content>How cliche'.&lt;br /&gt;&lt;br /&gt;Yet true. This is my first post.&lt;br /&gt;&lt;br /&gt;-ErR&lt;br /&gt;</content>
+  <ispublished>true</ispublished>
+  <categories>
+    <category></category>
+  </categories>
+  <comments></comments>
+</post>
