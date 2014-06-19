@@ -35,6 +35,7 @@ public static class Storage
                             new XElement("author", post.Author),
                             new XElement("pubDate", post.PubDate.ToString("yyyy-MM-dd HH:mm:ss")),
                             new XElement("lastModified", post.LastModified.ToString("yyyy-MM-dd HH:mm:ss")),
+                            new XElement("excerpt", post.Excerpt),
                             new XElement("content", post.Content),
                             new XElement("ispublished", post.IsPublished),
                             new XElement("categories", string.Empty),
@@ -72,6 +73,10 @@ public static class Storage
             posts.Sort((p1, p2) => p2.PubDate.CompareTo(p1.PubDate));
             HttpRuntime.Cache.Insert("posts", posts);
         }
+        else
+        {
+            HttpResponse.RemoveOutputCacheItem(string.Format("/{0}", Blog.BlogPath));
+        }
 
         doc.Save(file);
     }
@@ -101,6 +106,7 @@ public static class Storage
                 ID = Path.GetFileNameWithoutExtension(file),
                 Title = ReadValue(doc, "title"),
                 Author = ReadValue(doc, "author"),
+                Excerpt = ReadValue(doc, "excerpt"),
                 Content = ReadValue(doc, "content"),
                 Slug = ReadValue(doc, "slug").ToLowerInvariant(),
                 PubDate = DateTime.Parse(ReadValue(doc, "pubDate")),
